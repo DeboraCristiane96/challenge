@@ -3,18 +3,15 @@ package com.compass.challenge.domain.business.impls;
 import com.compass.challenge.api.mappers.PostConverter;
 import com.compass.challenge.client.response.PostResponse;
 import com.compass.challenge.domain.business.services.PostService;
-import com.compass.challenge.domain.entitys.Comments;
-import com.compass.challenge.domain.entitys.History;
 import com.compass.challenge.domain.entitys.Post;
-import com.compass.challenge.domain.repositorys.HistoryRepository;
 import com.compass.challenge.domain.repositorys.PostRepository;
-import com.compass.challenge.enums.PostStatus;
-import com.compass.challenge.exceptions.ResourceNotFoundException;
+
+
 import com.compass.challenge.payload.PostDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
-
+import java.util.Optional;
 
 import static java.lang.String.format;
 
@@ -88,6 +85,13 @@ public class PostServiceImpl implements PostService {
         }catch (Exception e) {
             throw new RuntimeException(format("Erro ao deletar post por id", id), e);
         }
+    }
+
+
+    @Override
+    public Optional<Post> findById(String id) {
+        postRepository.findById(id);
+        throw new UnsupportedOperationException("Unimplemented method 'findById'");
     }
 
 
