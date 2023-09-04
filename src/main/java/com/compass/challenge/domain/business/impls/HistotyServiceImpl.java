@@ -2,7 +2,6 @@ package com.compass.challenge.domain.business.impls;
 
 import com.compass.challenge.api.mappers.HistoryConverter;
 import com.compass.challenge.domain.business.services.HistotyService;
-import com.compass.challenge.domain.entitys.Comments;
 import com.compass.challenge.domain.entitys.History;
 import com.compass.challenge.domain.repositorys.HistoryRepository;
 import com.compass.challenge.enums.PostStatus;
